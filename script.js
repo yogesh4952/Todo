@@ -51,7 +51,7 @@ taskContent.addEventListener("keydown", (event) => {
 // Handle the "All Done" button click
 done.addEventListener("click", () => {
   if (checkAllCompleted()) {
-    alert("muji randi ko xora khateko ban machikne putiko jhol khau madarchod");
+    alert("Congratulations!!!");
     taskList.innerHTML = "";
   } else {
     alert("Complete all tasks before clicking 'All Done'!");

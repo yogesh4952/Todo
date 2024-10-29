@@ -77,6 +77,7 @@ body {
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  list-style: circle;
   font-size: 18px;
   transition: background-color 0.3s;
 }
@@ -86,6 +87,7 @@ body {
 }
 
 .completed {
+  list-style: disc;
   color: red;
   text-decoration: line-through;
 }
