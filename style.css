@@ -4,154 +4,136 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+}
+
 .container {
-  height: 100vh;
-  width: 100vw;
-  background: rgb(88, 87, 98);
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(88, 87, 98, 1) 0%,
-    rgba(9, 9, 121, 1) 43%,
-    rgba(0, 224, 255, 1) 100%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(88, 87, 98, 1) 0%,
-    rgba(9, 9, 121, 1) 43%,
-    rgba(0, 224, 255, 1) 100%
-  );
-  background: linear-gradient(
-    90deg,
-    rgba(88, 87, 98, 1) 0%,
-    rgba(9, 9, 121, 1) 43%,
-    rgba(0, 224, 255, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#585762",endColorstr="#00e0ff",GradientType=1);
   display: flex;
-  justify-content: start;
-  align-items: center;
   flex-direction: column;
-  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background: linear-gradient(120deg, #4e54c8, #8f94fb);
+  padding: 20px;
 }
 
 .heading {
-  position: absolute;
-  top: 20%;
+  margin-bottom: 20px;
 }
+
 .heading h1 {
-  font-size: 6rem;
-  font-weight: 800;
-  font-style: oblique;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: rgb(184, 176, 176);
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
 }
+
 .blinking-line {
-  animation: blink 1s infinite; /* Animation properties */
+  animation: blink 1s infinite;
 }
 
 .addTask {
-  position: relative;
-  display: inline-block;
-  top: 35%;
+  display: flex;
+  margin-bottom: 20px;
 }
 
 .input-field {
-  width: 20vw;
-  padding: 10px 9px;
-  height: 50px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid #6c63ff;
   outline: none;
-  border: none;
-  border-radius: 10px;
-  font-size: 20px;
-  position: relative;
+  width: 300px;
 }
-.input-field:active {
-  border: none;
-}
+
 .add-button {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  width: 20%;
-  cursor: pointer;
+  background-color: #6c63ff;
+  color: white;
+  font-size: 18px;
   border: none;
-  background-color: rgb(175, 167, 157);
-  font-size: 24px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-style: oblique;
+  border-radius: 0 5px 5px 0;
+  padding: 10px 20px;
+  cursor: pointer;
 }
+
+.add-button:hover {
+  background-color: #5352ed;
+}
+
 .task-list {
-  max-height: 534px;
-  width: 612px;
-  height: 275px;
-  top: 40%;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  list-style: circle;
-  padding-left: 20px;
-  padding-bottom: 5px;
+  list-style: none;
+  width: 350px;
+  padding: 0;
+  margin-top: 20px;
+  max-height: 300px;
   overflow-y: auto;
 }
+
 .task-item {
-  color: green;
-  font-weight: bolder;
-  font-size: 30px;
-  font-style: oblique;
-  cursor: pointer;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
 }
+
+.task-item:hover {
+  background-color: #f0f0f0;
+}
+
 .completed {
   color: red;
-  list-style: disc;
   text-decoration: line-through;
 }
 
-.task-list::-webkit-scrollbar-track {
-  background-color: red;
-}
-.task-list::-webkit-scrollbar {
-  width: 5px;
-}
-.task-list::-webkit-scrollbar-thumb {
-  background: #888;
+.complete-message {
+  margin-top: 20px;
+  text-align: center;
 }
 
-.complete-message {
-  position: relative;
-  top: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 .complete-message span {
-  font-size: 36px;
-  color: pink;
-  opacity: 0.8;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .complete-message button {
-  height: 50px;
-  font-size: 1.3em;
-  font-weight: 800;
-  font-style: oblique;
-  background-color: rgb(113, 211, 220);
+  height: 40px;
+  font-size: 1.2em;
+  font-weight: bold;
+  width: 7em;
+  background-color: #113d63;
   color: white;
-  border-radius: 14px;
+  border-radius: 5px;
   margin-top: 10px;
   cursor: pointer;
   border: none;
-  width: 10vw;
 }
+
 @keyframes blink {
   0%,
   100% {
-    opacity: 1; /* Fully visible */
+    opacity: 1;
   }
   50% {
-    opacity: 0; /* Invisible */
+    opacity: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .input-field {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .add-button {
+    font-size: 14px;
+  }
+
+  .heading h1 {
+    font-size: 2rem;
   }
 }
