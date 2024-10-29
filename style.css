@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  background: rgb(88, 87, 98);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(88, 87, 98, 1) 0%,
+    rgba(9, 9, 121, 1) 43%,
+    rgba(0, 224, 255, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(88, 87, 98, 1) 0%,
+    rgba(9, 9, 121, 1) 43%,
+    rgba(0, 224, 255, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(88, 87, 98, 1) 0%,
+    rgba(9, 9, 121, 1) 43%,
+    rgba(0, 224, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#585762",endColorstr="#00e0ff",GradientType=1);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.heading {
+  position: absolute;
+  top: 20%;
+}
+.heading h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  font-style: oblique;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(184, 176, 176);
+}
+.blinking-line {
+  animation: blink 1s infinite; /* Animation properties */
+}
+
+.addTask {
+  position: relative;
+  display: inline-block;
+  top: 35%;
+}
+
+.input-field {
+  width: 20vw;
+  padding: 10px 9px;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  position: relative;
+}
+.input-field:active {
+  border: none;
+}
+.add-button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 20%;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(175, 167, 157);
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-style: oblique;
+}
+.task-list {
+  max-height: 534px;
+  width: 612px;
+  height: 275px;
+  top: 40%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  list-style: circle;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  overflow-y: auto;
+}
+.task-item {
+  color: green;
+  font-weight: bolder;
+  font-size: 30px;
+  font-style: oblique;
+  cursor: pointer;
+}
+.completed {
+  color: red;
+  list-style: disc;
+  text-decoration: line-through;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background-color: red;
+}
+.task-list::-webkit-scrollbar {
+  width: 5px;
+}
+.task-list::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.complete-message {
+  position: relative;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.complete-message span {
+  font-size: 36px;
+  color: pink;
+  opacity: 0.8;
+}
+
+.complete-message button {
+  height: 50px;
+  font-size: 1.3em;
+  font-weight: 800;
+  font-style: oblique;
+  background-color: rgb(113, 211, 220);
+  color: white;
+  border-radius: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  width: 10vw;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1; /* Fully visible */
+  }
+  50% {
+    opacity: 0; /* Invisible */
+  }
+}
